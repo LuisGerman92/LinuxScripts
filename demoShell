@@ -1,0 +1,39 @@
+#!/bin/bash
+
+wget -q --tries=10 --timeout=20 --spider http://google.com
+if [[ $? -eq 0 ]]; then
+        echo "Online"
+        
+        ps cax | grep ANDON-BOT > /dev/null
+		if [ $? -eq 0 ]; then
+		  ps cax | grep ANDON-BOT
+		  echo "Process is running."
+		  pid=`ps -ef | awk '/ANDON-BOT/{ print $2 }'`
+		  echo $pid
+
+		  
+		else
+		  echo "Process is not running."
+		  cd
+		  cd Documentos
+		  cd AndonBot
+		  python3 Test.py
+		  echo "Process is now running"
+		fi
+else
+        echo "Offline"
+        ps cax | grep ANDON-BOT > /dev/null
+		if [ $? -eq 0 ]; then
+		  ps cax | grep ANDON-BOT
+		  echo "Process is running."
+		  pid=`ps -ef | awk '/ANDON-BOT/{ print $2 }'`
+		  echo $pid
+
+		  kill -KILL $pid
+
+		  echo "now... it's not... bastard!!"
+		else
+		  echo "Process is not running."
+		fi
+fi
+
