@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+
+wpa_supplicant -Dwext,nl80211 -iwlan0 -cwpa.conf
+
+dhclient wlan0

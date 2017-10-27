@@ -1,0 +1,11 @@
+//**********************************************************************************
+//***COMANDOS PARA CONFIGURACIONES DE RED*******************************************
+//**********************************************************************************
+
+-$ iwconfig // permite escanear todos los adaptadores de red dentro de linux
+
+-$ sudo ip link set wlan0 up // comando que permite ensender (up) o apagar (down) diferentes dispositivos de red, en este caso wlan0
+
+-$ iwlist scan // esta es otra forma para poder ver los adaptadores de red, da detalles diferentes
+
+
