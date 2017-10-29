@@ -8,4 +8,40 @@
 
 -$ iwlist scan // esta es otra forma para poder ver los adaptadores de red, da detalles diferentes
 
+-$ sudo wpa_supplicant -Dwext,nl80211 -iwlan0 -cwpa.conf <- para conectarse wpa.conf
+														 <- debe ser generado
+
+-$ sudo dhclient wlan0 <- para renovar dirección ip y obetener acceso a internet.
+
+//**********************************************************************************
+//***COMANDOS PARA CONFIGURAR APACHE CORRECTAMENTE**********************************
+//**********************************************************************************
+
+-$ sudo nano /etc/apache2/apache2.conf <- agregar linea en archivo:
+
+Include /etc/phpmyadmin/apache.conf <- esta linea
+
+-$ sudo service apache2 restart
+
+//**********************************************************************************
+//***COMANDOS PARA QUE SSH SE INSTALE E INICIE CON REBOOT***************************
+//**********************************************************************************
+
+-$ sudo systemctl enable ssh <- para que arranque en reboot
+
+-$ sudo apt-get install openssh-client 
+-$ sudo apt-get install openssh-server
+
+//**********************************************************************************
+//***COMANDOS PARA INSTALAR Y ACTIVAR TIGHT VNC SERVER******************************
+//**********************************************************************************
+
+-$ sudo apt-get install tightvncserver <- esto para instalar
+-$ vncserver						   <- esto para ejecutar
+									   <- recomendable ejecutar como root
+
+//**********************************************************************************
+//**********************************************************************************
+//**********************************************************************************
+
 
